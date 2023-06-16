@@ -3,6 +3,7 @@
     import { Button } from "fluent-svelte";
     import { listen } from "@tauri-apps/api/event";
     import { invoke } from "@tauri-apps/api";
+    import Splash from "./Splash.svelte";
 
     let url = getSignInUrl();
 
@@ -20,26 +21,10 @@
     };
 </script>
 
-<main>
-    <h1>FluentSpot</h1>
-    {#await url}
-        <p>Loading...</p>
-    {:then url}
+{#await url}
+    <Splash />
+{:then url}
+    <Splash>
         <Button variant="accent" on:click={signIn(url)}>Sign in with Spotify</Button>
-    {/await}
-</main>
-
-<style>
-    main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        gap: 50px;
-    }
-
-    h1 {
-        font-size: 3rem;
-    }
-</style>
+    </Splash>
+{/await}
