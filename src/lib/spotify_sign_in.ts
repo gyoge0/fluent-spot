@@ -3,7 +3,12 @@ import pkceChallenge from "pkce-challenge";
 
 const clientId = "689f510bed68418f81f8de98249a5943";
 const redirectUri = "http://localhost:10000";
-const scopes = ["streaming"];
+const scopes = [
+    "streaming",
+    "user-read-playback-state",
+    "user-modify-playback-state",
+    "user-read-currently-playing",
+];
 
 export async function getSignInUrl() {
     const pkce = pkceChallenge();

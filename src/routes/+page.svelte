@@ -1,9 +1,9 @@
 <script lang="ts">
-    import { getSignInUrl, handleRedirect } from "./spotify_sign_in";
+    import { getSignInUrl, handleRedirect } from "$lib/spotify_sign_in";
     import { Button } from "fluent-svelte";
     import { listen } from "@tauri-apps/api/event";
     import { invoke } from "@tauri-apps/api";
-    import Splash from "./Splash.svelte";
+    import Splash from "$lib/Splash.svelte";
 
     let url = getSignInUrl();
 
