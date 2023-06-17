@@ -8,6 +8,6 @@ export type UserCreds = {
     token_type: string;
 };
 
-export const creds: Writable<UserCreds | null> = writable(null);
+export const creds: Writable<UserCreds> = writable();
 export const storedPlayer: Writable<Spotify.Player | null> = writable(null);
 export const deviceId: Writable<string> = writable("");
