@@ -1,6 +1,6 @@
-import type { UserCreds } from "$lib/stores";
-import type { Track } from "$lib/api/types";
-import { convertTrack } from "$lib/api/types";
+import type { UserCreds } from "$lib/client/stores";
+import type { Track } from "$lib/client/types";
+import { convertTrack } from "$lib/client/types";
 
 export type PlaybackPlatform = "client" | "api" | "active";
 

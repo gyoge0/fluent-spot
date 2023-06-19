@@ -1,10 +1,9 @@
 <script>
     import { Button } from "fluent-svelte";
-    import Splash from "$lib/Splash.svelte";
+    import Splash from "$lib/components/Splash.svelte";
 </script>
 
 <Splash>
-    <p>You need a Spotify Premium account to use FluentSpot</p>
-    <p>This is a restriction imposed by Spotify.</p>
+    <p>Spotify requires a premium account to use FluentSpot</p>
     <Button href="/">Go back home</Button>
 </Splash>

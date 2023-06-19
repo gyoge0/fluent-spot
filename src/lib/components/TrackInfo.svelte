@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Track } from "$lib/api/types";
+    import type { Track } from "$lib/client/types";
 
     export let track: Track;
 </script>

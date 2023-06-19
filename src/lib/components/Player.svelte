@@ -1,12 +1,12 @@
 <!--suppress HtmlRequiredAltAttribute -->
 <script lang="ts">
-    import Acryllic from "$lib/Acryllic.svelte";
-    import { Client } from "$lib/api/client";
+    import Acryllic from "$lib/components/Acryllic.svelte";
+    import { Client } from "$lib/client/client";
     import { onDestroy } from "svelte";
-    import type { Track } from "$lib/api/types";
-    import Buttons from "$lib/Buttons.svelte";
-    import TrackInfo from "$lib/TrackInfo.svelte";
-    import AlbumImage from "$lib/AlbumImage.svelte";
+    import type { Track } from "$lib/client/types";
+    import Buttons from "$lib/components/Buttons.svelte";
+    import TrackInfo from "$lib/components/TrackInfo.svelte";
+    import AlbumImage from "$lib/components/AlbumImage.svelte";
 
     export let client: Client;
     const listener = client.onStateChange(async () => {

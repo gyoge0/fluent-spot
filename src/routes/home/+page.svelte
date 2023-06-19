@@ -4,9 +4,9 @@
 
 <script lang="ts">
 
-    import Splash from "$lib/Splash.svelte";
-    import getClient from "$lib/api/get_client";
-    import Main from "$lib/Player.svelte";
+    import Splash from "$lib/components/Splash.svelte";
+    import getClient from "$lib/client/get_client";
+    import Main from "$lib/components/Player.svelte";
 
 
     let promise = getClient().catch(console.error);

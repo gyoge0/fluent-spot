@@ -1,8 +1,8 @@
-import type { UserCreds } from "$lib/stores";
-import { creds, deviceId, storedPlayer } from "$lib/stores";
-import addListeners from "$lib/listeners";
+import type { UserCreds } from "$lib/client/stores";
+import { creds, deviceId, storedPlayer } from "$lib/client/stores";
+import addListeners from "$lib/client/listeners";
 import { get } from "svelte/store";
-import { Client } from "$lib/api/client";
+import { Client } from "$lib/client/client";
 
 export default async function getClient(): Promise<Client> {
     return new Promise((resolve, reject) => {
