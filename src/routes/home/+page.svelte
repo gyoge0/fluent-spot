@@ -6,7 +6,7 @@
 
     import Splash from "$lib/Splash.svelte";
     import getClient from "$lib/api/get_client";
-    import Main from "$lib/Main.svelte";
+    import Main from "$lib/Player.svelte";
 
 
     let promise = getClient().catch(console.error);
