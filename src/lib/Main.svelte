@@ -21,7 +21,7 @@
     let inOptions = { x: "100%" };
     let outOptions = { x: "-100%" };
     let track: Track | null = null;
-    let image = "";
+    let image = "/app-icon.png";
 
     function update(time = 225) {
         setTimeout(async () => {
