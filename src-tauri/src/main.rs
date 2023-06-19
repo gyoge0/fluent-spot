@@ -20,6 +20,10 @@ async fn do_oauth(handle: AppHandle<Wry>, window: Window<Wry>, url: &str) -> Res
     .build()
     .map_err(|err| err.to_string())?;
 
+    oauth_window
+        .set_title("Spotify Sign In")
+        .map_err(|err| err.to_string())?;
+
     start_with_config(
         OauthConfig {
             ports: Some(vec![10000]),
