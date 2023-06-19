@@ -29,7 +29,7 @@ module.exports = {
                 // ESLint breaks whenever I type something as from the Spotify playback sdk
                 "no-undef": "off",
                 "empty-block": "off",
-            }
+            },
         },
     ],
 };

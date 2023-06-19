@@ -1,5 +1,5 @@
 function convertUri(uri) {
-    return uri.split(":")[2]
+    return uri.split(":")[2];
 }
 
 export type Track = {
@@ -15,7 +15,7 @@ export function convertTrack(convert: Spotify.Track): Track {
         name: convert.name,
         artists: convert.artists.map(convertArtist),
         album: convertAlbum(convert.album),
-    }
+    };
 }
 
 export type Artist = {
@@ -28,8 +28,8 @@ export function convertArtist(convert: Spotify.Entity) {
     return {
         id: convertUri(convert.uri),
         name: convert.name,
-        images: []
-    }
+        images: [],
+    };
 }
 
 export type Album = {
@@ -43,7 +43,7 @@ export function convertAlbum(convert: Spotify.Album): Album {
         id: convertUri(convert.uri),
         name: convert.name,
         images: convert.images.map(convertImage),
-    }
+    };
 }
 
 export type Image = {

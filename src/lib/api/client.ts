@@ -5,7 +5,7 @@ import { convertTrack } from "$lib/api/types";
 export type PlaybackPlatform = "client" | "api" | "active";
 
 export function getTrack(state: Spotify.PlaybackState): Track {
-    return convertTrack(state.track_window.current_track)
+    return convertTrack(state.track_window.current_track);
 }
 
 export class Client {
@@ -50,7 +50,7 @@ export class Client {
         }
 
         const res = await fetch(`https://api.spotify.com/v1${endpoint}`, options);
-        console.log(res.status)
+        console.log(res.status);
         if (res.status === 200) {
             return res
                 .json()
@@ -82,7 +82,7 @@ export class Client {
             async () => this.deviceId,
             async () => {
                 const res = await this.request("/me/player", "GET");
-                if (typeof(res) === "number") {
+                if (typeof res === "number") {
                     return null;
                 } else {
                     return res["device"]["id"];
@@ -96,14 +96,14 @@ export class Client {
             async (client) => {
                 const state = await client.getCurrentState();
                 if (state === null) {
-                    return null
+                    return null;
                 }
                 return getTrack(state);
             },
             async () => {
                 const res = await this.request("/me/player/currently-playing", "GET");
-                if (typeof(res) === "number") {
-                    return null
+                if (typeof res === "number") {
+                    return null;
                 } else {
                     return convertTrack(res["item"]);
                 }
@@ -172,7 +172,7 @@ export class Client {
         );
     }
 
-    async disconnect() : Promise<void> {
+    async disconnect(): Promise<void> {
         await this.player.disconnect();
     }
 }
