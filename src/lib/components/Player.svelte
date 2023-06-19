@@ -1,6 +1,6 @@
 <!--suppress HtmlRequiredAltAttribute -->
 <script lang="ts">
-    import Acryllic from "$lib/components/Acryllic.svelte";
+    import Acrylic from "$lib/components/Acrylic.svelte";
     import { Client } from "$lib/client/client";
     import { onDestroy } from "svelte";
     import type { Track } from "$lib/client/types";
@@ -71,7 +71,7 @@
     }
 </script>
 
-<Acryllic {image} blur="150">
+<Acrylic {image} blur="150">
     <main>
         <AlbumImage {image} {inOptions} {outOptions} />
         {#if track !== null}
@@ -79,7 +79,7 @@
         {/if}
         <Buttons {skipNext} {skipPrevious} {togglePlay} {paused} />
     </main>
-</Acryllic>
+</Acrylic>
 
 <style>
     main {
