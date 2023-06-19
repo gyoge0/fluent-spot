@@ -4,6 +4,6 @@
 </script>
 
 <Splash>
-    <p>Spotify requires a premium account to use FluentSpot</p>
-    <Button href="/">Go back home</Button>
+    <p>Spotify requires you to have a premium account to use FluentSpot.</p>
+    <Button variant="accent" href="/">Go back home</Button>
 </Splash>

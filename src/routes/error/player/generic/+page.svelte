@@ -4,6 +4,6 @@
 </script>
 
 <Splash>
-    <p>Something went wrong signing in</p>
-    <Button href="/">Go back home</Button>
+    <p>Something went wrong.</p>
+    <Button variant="accent" href="/">Go back home</Button>
 </Splash>
