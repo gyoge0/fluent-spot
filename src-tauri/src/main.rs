@@ -1,9 +1,10 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use tauri::Window;
 use tauri::{command, AppHandle, Wry};
+use tauri::{Manager, Window};
 use tauri_plugin_oauth::{start_with_config, OauthConfig};
+use window_shadows::set_shadow;
 
 #[command]
 async fn do_oauth(handle: AppHandle<Wry>, window: Window<Wry>, url: &str) -> Result<(), String> {
@@ -44,6 +45,12 @@ async fn do_oauth(handle: AppHandle<Wry>, window: Window<Wry>, url: &str) -> Res
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![do_oauth])
+        .setup(|app| {
+            for w in app.windows().values() {
+                set_shadow(&w, true).unwrap();
+            }
+            Ok(())
+        })
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
